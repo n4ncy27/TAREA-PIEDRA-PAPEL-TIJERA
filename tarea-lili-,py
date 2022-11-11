@@ -85,26 +85,32 @@ def salir_ventana():
     ventana_principal.destroy()
 
 # Interfaz
+
+# -----------------------------
+# VENTANA PRINCIPAL
+# -----------------------------
+
+# creacion objeto Tk (ventana principal)
 ventana_principal = tk.Tk()
 ventana_principal.geometry("400x540")
 ventana_principal.resizable(False, False)
-ventana_principal.configure(background="#9BC4BC", highlightbackground="black", highlightthickness=8)
+ventana_principal.configure(background="#db03fc", highlightbackground="black", highlightthickness=8)
 
 label_titulo = tk.Label(
     text="¡Piedra, papel o tijera!",
-    background="#9BC4BC",
+    background="#db03fc",
     foreground="#090909",
     font=("Verdana", 18, "bold"),
 )
 label_titulo.place(x=50, y=18)
 
 label_puntaje_cpu = tk.Label(
-    text=0, background="#9BC4BC", foreground="#4B5043", font=("Consolas", 30, "bold")
+    text=0, background="#db03fc", foreground="#4B5043", font=("Consolas", 30, "bold")
 )
 label_puntaje_cpu.place(x=280, y=70)
 
 label_puntaje_jugador = tk.Label(
-    text=0, background="#9BC4BC", foreground="#4B5043", font=("Consolas", 30, "bold")
+    text=0, background="#db03fc", foreground="#4B5043", font=("Consolas", 30, "bold")
 )
 label_puntaje_jugador.place(x=100, y=70)
 
@@ -159,14 +165,14 @@ boton_salir.place(x=256, y=455)
 
 
 label_resultado = tk.Label(
-    text="", background="#9BC4BC", foreground="#4B5043", font=("Verdana", 15, "bold")
+    text="", background="#db03fc", foreground="#4B5043", font=("Verdana", 15, "bold")
 )
  
 
 
 label_resultado.place(x=167, y=70)
 
-imagen_respuesta = tk.Label(image="", background="#9BC4BC")
+imagen_respuesta = tk.Label(image="", background="#db03fc")
 imagen_respuesta.place(x=220, y=205)
 
 
