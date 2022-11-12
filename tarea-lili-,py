@@ -24,9 +24,7 @@ def calcular_ganador_piedra():
     elif eleccion_cpu == 2:
         imagen_respuesta.configure(image=imagen_tijera)
         resultado = "Victoria"
-        label_puntaje_jugador.configure(
-            text=int(label_puntaje_jugador.cget("text")) + 1
-        )
+        label_puntaje_jugador.configure(text=int(label_puntaje_jugador.cget("text")) + 1)
 
     label_resultado.configure(text=resultado)
 
@@ -37,9 +35,7 @@ def calcular_ganador_papel():
     if eleccion_cpu == 0:
         imagen_respuesta.configure(image=imagen_piedra)
         resultado = "Victoria"
-        label_puntaje_jugador.configure(
-            text=int(label_puntaje_jugador.cget("text")) + 1
-        )
+        label_puntaje_jugador.configure(text=int(label_puntaje_jugador.cget("text")) + 1)
 
     elif eleccion_cpu == 1:
         imagen_respuesta.configure(image=imagen_papel)
@@ -63,9 +59,7 @@ def calcular_ganador_tijera():
     elif eleccion_cpu == 1:
         imagen_respuesta.configure(image=imagen_papel)
         resultado = "Victoria"
-        label_puntaje_jugador.configure(
-            text=int(label_puntaje_jugador.cget("text")) + 1
-        )
+        label_puntaje_jugador.configure(text=int(label_puntaje_jugador.cget("text")) + 1)
 
     elif eleccion_cpu == 2:
         imagen_respuesta.configure(image=imagen_tijera)
@@ -92,81 +86,45 @@ def salir_ventana():
 
 # creacion objeto Tk (ventana principal)
 ventana_principal = tk.Tk()
-ventana_principal.geometry("400x540")
-ventana_principal.resizable(False, False)
-ventana_principal.configure(background="#db03fc", highlightbackground="black", highlightthickness=8)
 
-label_titulo = tk.Label(
-    text="¡Piedra, papel o tijera!",
-    background="#db03fc",
-    foreground="#090909",
-    font=("Verdana", 18, "bold"),
-)
+#Tamaño de la ventana, ancho y alto
+ventana_principal.geometry("400x540")
+
+# deshabilitar boton maximizar
+ventana_principal.resizable(0,0)
+
+# color de fondo ventana principal
+ventana_principal.configure(bg="#db03fc", highlightbackground="black", highlightthickness=8)
+
+label_titulo = tk.Label(text="¡Piedra, papel o tijera!",background="#db03fc",foreground="#090909",font=("Verdana", 18, "bold"),)
 label_titulo.place(x=50, y=18)
 
-label_puntaje_cpu = tk.Label(
-    text=0, background="#db03fc", foreground="#4B5043", font=("Consolas", 30, "bold")
-)
+label_puntaje_cpu = tk.Label(text=0, background="#db03fc", foreground="#090909", font=("Consolas", 30, "bold"))
 label_puntaje_cpu.place(x=280, y=70)
 
-label_puntaje_jugador = tk.Label(
-    text=0, background="#db03fc", foreground="#4B5043", font=("Consolas", 30, "bold")
-)
+label_puntaje_jugador = tk.Label(text=0, background="#db03fc", foreground="#090909", font=("Consolas", 30, "bold"))
 label_puntaje_jugador.place(x=100, y=70)
 
 imagen_piedra = tk.PhotoImage(file="piedra.png")
-boton_piedra = tk.Button(
-    ventana_principal,
-    background="white",
-    image=imagen_piedra,
-    borderwidth=5,
-    relief="raised",
-    command=calcular_ganador_piedra,
-)
+boton_piedra = tk.Button(ventana_principal, background="white", image=imagen_piedra,borderwidth=5,relief="raised",command=calcular_ganador_piedra,)
 boton_piedra.place(x=65, y=135)
 
 imagen_papel = tk.PhotoImage(file="papel.png")
-boton_papel = tk.Button(
-    ventana_principal,
-    background="white",
-    image=imagen_papel,
-    borderwidth=5,
-    relief="raised",
-    command=calcular_ganador_papel,
-)
+boton_papel = tk.Button(ventana_principal,background="white",image=imagen_papel,borderwidth=5,relief="raised",command=calcular_ganador_papel,)
 boton_papel.place(x=65, y=245)
 
 imagen_tijera = tk.PhotoImage(file="tijera.png")
-boton_tijera = tk.Button(
-    ventana_principal,
-    background="white",
-    image=imagen_tijera,
-    borderwidth=5,
-    relief="raised",
-    command=calcular_ganador_tijera,
-)
+boton_tijera = tk.Button(ventana_principal,background="white",image=imagen_tijera,borderwidth=5,relief="raised",command=calcular_ganador_tijera,)
 boton_tijera.place(x=65, y=380)
 
-boton_reinicio = tk.Button(
-    ventana_principal,
-    background="white",
-    text="REINICIAR",
-    command=reiniciar_contadores,
-)
+boton_reinicio = tk.Button(ventana_principal,background="white",text="REINICIAR",command=reiniciar_contadores,)
 boton_reinicio.place(x=256, y=400)
 
-boton_salir = tk.Button(
-    ventana_principal,
-    background="white",
-    text="SALIR",
-    command=salir_ventana,
-)
+boton_salir = tk.Button(ventana_principal, background="white",text="SALIR",command=salir_ventana,)
 boton_salir.place(x=256, y=455)
 
 
-label_resultado = tk.Label(
-    text="", background="#db03fc", foreground="#4B5043", font=("Verdana", 15, "bold")
-)
+label_resultado = tk.Label(text="", background="#db03fc", foreground="#090909", font=("Verdana", 15, "bold"))
  
 
 
